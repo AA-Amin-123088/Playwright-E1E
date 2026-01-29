@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","7555","Test Case 1: Verify Feature Items","chromium","Thu Jan 29 22:49:02 BDT 2026","passed","Thu Jan 29 22:49:09 BDT 2026","Sauce Demo Tests with Session","002Product.spec.js","",""
+"","6017","Test Case 2: Scroll to Bottom","chromium","Thu Jan 29 22:49:10 BDT 2026","passed","Thu Jan 29 22:49:16 BDT 2026","Sauce Demo Tests with Session","002Product.spec.js","",""
+"","8186","Add Product E2E Test1","chromium","Thu Jan 29 22:49:24 BDT 2026","passed","Thu Jan 29 22:49:32 BDT 2026","","001Product.spec.js","",""
