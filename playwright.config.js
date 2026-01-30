@@ -6,7 +6,12 @@ const { defineConfig, devices } = require('@playwright/test');
  * https://github.com/motdotla/dotenv
  */
 // require('dotenv').config({ path: path.resolve(__dirname, '.env') });
-
+import * as dotenv from 'dotenv';
+import path from 'path';
+// Get environment variable from CLI or default to dev
+const ENV = process.env.ENV || 'dev';
+// Load corresponding .env file
+dotenv.config({ path: path.resolve(__dirname, `./env/${ENV}.env`) });
 /**
  * @see https://playwright.dev/docs/test-configuration
  */
@@ -32,8 +37,8 @@ module.exports = defineConfig({
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    storageState: 'auth.json',
-    baseURL: 'https://www.saucedemo.com/',
+    storageState: `session/${ENV}-state.json`,
+    baseURL: process.env.BASE_URL,
     headless:false,
     video:'retain-on-failure',
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
@@ -129,3 +134,33 @@ module.exports = defineConfig({
   //   reuseExistingServer: !process.env.CI,
   // },
 });
+
+
+
+
+// git init 
+// git add . 
+// git commit -m "message"
+// git branch -M main
+// git remote add origin "url"
+// git remote set-url origin "url"
+// git push -u origin main
+// git fetch origin or --all 
+// git branch 
+// git status 
+// git clone "url"
+// git checkout branch
+// git checkout -b new_branch
+// git push -u origin new_branch
+// git branch -d/D new_branch
+// git push origin --delete new_branch
+// git pull origin main_branch
+// git remote -v
+// Last Stage for Manager :
+// git checkout main_branch
+// git pull origin main_branch
+// git merge origin/feature_branch
+// git push -u origin main_branch
+
+// npm install rimraf --save-dev
+// $env:ENV="prod"; npx playwright test --headed

@@ -20,5 +20,8 @@
     "allure-commandline": "^2.32.0",
     "allure-playwright": "^3.0.7",
     "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3"
   }
 }
