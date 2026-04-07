@@ -1,5 +1,3 @@
-import {Locator} from '@playwright/test'
-
 export async function customMethod(page) {
   await page.locator("//div[normalize-space()='Sauce Labs Onesie']").click();
 }
