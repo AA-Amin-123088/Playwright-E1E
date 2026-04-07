@@ -1,6 +1,6 @@
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
-import { chromium, FullConfig} from '@playwright/test';
+import { chromium } from '@playwright/test';
 import * as dotenv from 'dotenv';
 import path from 'path';
 
@@ -10,7 +10,7 @@ const ENV = process.env.ENV || 'dev';
 
 dotenv.config({ path: path.resolve(__dirname, `./env/${ENV}.env`) });
 
-async function globalSetup(config) {
+async function globalSetup() {
   const browser = await chromium.launch();
   const page = await browser.newPage();
   await page.goto(`${process.env.BASE_URL}`);

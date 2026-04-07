@@ -39,7 +39,7 @@ module.exports = defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     storageState: `session/${ENV}-state.json`,
     baseURL: process.env.BASE_URL,
-    headless:false,
+    headless:true,
     video:'retain-on-failure',
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
