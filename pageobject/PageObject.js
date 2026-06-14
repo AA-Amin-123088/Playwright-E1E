@@ -1,4 +1,3 @@
-
 import { HomeLocator } from "../pages/HomePage";
 
 export class PageObject{
