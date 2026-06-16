@@ -1,13 +1,9 @@
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-
 import { chromium } from '@playwright/test';
 import * as dotenv from 'dotenv';
 import path from 'path';
-
 // Get environment variable from CLI or default to dev
-
 const ENV = process.env.ENV || 'dev';
-
 dotenv.config({ path: path.resolve(__dirname, `./env/${ENV}.env`) });
 
 async function globalSetup() {
