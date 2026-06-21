@@ -16,7 +16,7 @@ test.describe('Sauce Demo Tests with Session', () => {
     await delay(1000);
   });
   test('Test Case 2: Scroll to Bottom', async ({ page }) => {
-    await page.locator("//div[normalize-space()='Sauce Labs Onesie']").click();
+    await customMethod(page);
     await delay(1000);
   });
 

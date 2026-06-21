@@ -6,24 +6,24 @@ import { PageObject } from '../pageobject/PageObject';
 import { clearAndTypeInput } from '../utils/CustomCommands';
 
 test.beforeEach(async({page}) => {
-  await page.goto("https://automationexercise.com");
+  await page.goto('/inventory.html',{waitUntil:'domcontentloaded'});
 });
 test.afterEach(async ({page})=>{
+  await delay(2000);
   await page.close();
 });
 test('Add Product E2E Test1',async({page}) => {
   const ObjectManager=new PageObject(page);
-  await expect(ObjectManager.homeObj.home_text_header()).toHaveText("Home");
+  await expect(ObjectManager.homeObj.home_title_header()).toHaveText("Swag Labs");
   await ObjectManager.homeObj.product_link().click();
   await ObjectManager.homeObj.add_to_cart_button().click();
   await ObjectManager.homeObj.view_cart_link().click();
   await ObjectManager.homeObj.proceed_to_checkout_button().click();
-  await ObjectManager.homeObj.register_login_button().click();
-  await ObjectManager.homeObj.name_input_field().fill("tania");
-  await ObjectManager.homeObj.email_address_input_field().fill(randomEmail);
-  await delay(5000);
-  await clearAndTypeInput(ObjectManager.homeObj.email_address_input_field(),1+randomEmail);
-  await delay(5000);
+  await ObjectManager.homeObj.f_name_input_field().fill("tania");
+  await ObjectManager.homeObj.l_name_input_field().fill("doe");
+  await ObjectManager.homeObj.zip_code_input_field().fill("12345");
+  await ObjectManager.homeObj.continue_button().click();
+  await ObjectManager.homeObj.finish_button().click();
 });
 
 
